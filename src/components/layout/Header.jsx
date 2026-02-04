@@ -17,17 +17,25 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <header className="sticky top-0 z-50 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-lg border-b border-neutral-200 dark:border-neutral-800 shadow-sm">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
-            <BookOpen className="text-accent-500 group-hover:rotate-12 transition-transform" size={32} />
-            <span className="text-2xl font-serif font-bold bg-gradient-to-r from-accent-500 to-accent-700 bg-clip-text text-transparent">
-              BiblioApp
-            </span>
+          <Link to="/" className="flex items-center gap-3 group">
+            <motion.div
+              whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+              transition={{ duration: 0.5 }}
+            >
+              <BookOpen className="text-primary-500 dark:text-primary-400 transition-transform" size={36} />
+            </motion.div>
+            <div>
+              <span className="text-2xl md:text-3xl font-serif font-bold bg-gradient-primary bg-clip-text text-transparent">
+                BiblioApp
+              </span>
+              <p className="text-xs text-gray-500 dark:text-gray-400 hidden md:block">Tu biblioteca personal</p>
+            </div>
           </Link>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.path;
@@ -39,22 +47,27 @@ const Header = () => {
                 >
                   <div className="flex items-center gap-2">
                     <Icon 
-                      size={20} 
-                      className={`${isActive ? 'text-accent-500' : 'text-gray-600 dark:text-gray-400'} group-hover:text-accent-500 transition-colors`}
+                      size={22} 
+                      className={`${isActive ? 'text-primary-600 dark:text-primary-400' : 'text-gray-600 dark:text-gray-400'} group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors`}
                     />
-                    <span className={`${isActive ? 'text-accent-500 font-semibold' : 'text-gray-700 dark:text-gray-300'} group-hover:text-accent-500 transition-colors`}>
+                    <span className={`${isActive ? 'text-primary-600 dark:text-primary-400 font-bold' : 'text-gray-700 dark:text-gray-300 font-medium'} group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors`}>
                       {item.label}
                     </span>
                     {item.badge > 0 && (
-                      <span className="bg-accent-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      <motion.span 
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        className="bg-gradient-accent text-white text-xs font-bold rounded-full min-w-[24px] h-6 flex items-center justify-center px-2 shadow-md"
+                      >
                         {item.badge}
-                      </span>
+                      </motion.span>
                     )}
                   </div>
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent-500"
+                      className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-primary rounded-full"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
                 </Link>
@@ -66,7 +79,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden flex justify-around mt-4 border-t border-gray-200 dark:border-gray-800 pt-4">
+        <div className="md:hidden flex justify-around mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-800">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.path;
@@ -76,18 +89,24 @@ const Header = () => {
                 to={item.path}
                 className="flex flex-col items-center gap-1 relative"
               >
-                <Icon 
-                  size={24} 
-                  className={isActive ? 'text-accent-500' : 'text-gray-600 dark:text-gray-400'}
-                />
-                <span className={`text-xs ${isActive ? 'text-accent-500 font-semibold' : 'text-gray-600 dark:text-gray-400'}`}>
+                <div className="relative">
+                  <Icon 
+                    size={26} 
+                    className={isActive ? 'text-primary-600 dark:text-primary-400' : 'text-gray-600 dark:text-gray-400'}
+                  />
+                  {item.badge > 0 && (
+                    <motion.span 
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      className="absolute -top-2 -right-2 bg-gradient-accent text-white text-xs font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center px-1"
+                    >
+                      {item.badge}
+                    </motion.span>
+                  )}
+                </div>
+                <span className={`text-xs ${isActive ? 'text-primary-600 dark:text-primary-400 font-bold' : 'text-gray-600 dark:text-gray-400 font-medium'}`}>
                   {item.label}
                 </span>
-                {item.badge > 0 && (
-                  <span className="absolute -top-1 -right-2 bg-accent-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                    {item.badge}
-                  </span>
-                )}
               </Link>
             );
           })}

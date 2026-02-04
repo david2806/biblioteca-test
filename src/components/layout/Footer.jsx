@@ -1,53 +1,148 @@
-import { BookOpen, Github, Heart } from 'lucide-react';
+import { BookOpen, Github, Heart, Twitter, Mail, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-auto">
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <BookOpen className="text-accent-500" size={24} />
-              <span className="text-xl font-serif font-bold">BiblioApp</span>
+    <footer className="bg-gradient-to-br from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800 border-t border-neutral-200 dark:border-neutral-700 mt-auto">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* Brand Section */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <BookOpen className="text-primary-500 dark:text-primary-400" size={32} />
+              <span className="text-2xl font-serif font-bold bg-gradient-primary bg-clip-text text-transparent">
+                BiblioApp
+              </span>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
-              Your personal digital library for discovering, organizing, and tracking books.
+            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+              Tu biblioteca digital personal para descubrir, organizar y seguir tu viaje de lectura.
             </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-              <li><a href="/" className="hover:text-accent-500 transition-colors">Home</a></li>
-              <li><a href="/explorar" className="hover:text-accent-500 transition-colors">Explore Books</a></li>
-              <li><a href="/mi-biblioteca" className="hover:text-accent-500 transition-colors">My Library</a></li>
-              <li><a href="/estadisticas" className="hover:text-accent-500 transition-colors">Statistics</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">About</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-              Powered by Google Books API
-            </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <a
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-accent-500 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
-                <Github size={20} />
+                <Github size={22} />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                <Twitter size={22} />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                <Facebook size={22} />
+              </a>
+              <a
+                href="mailto:contacto@biblioapp.com"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                <Mail size={22} />
               </a>
             </div>
           </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-bold text-lg mb-4 text-primary-700 dark:text-primary-300">Enlaces Rápidos</h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link to="/" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline">
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link to="/explorar" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline">
+                  Explorar Libros
+                </Link>
+              </li>
+              <li>
+                <Link to="/mi-biblioteca" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline">
+                  Mi Biblioteca
+                </Link>
+              </li>
+              <li>
+                <Link to="/estadisticas" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline">
+                  Estadísticas
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="font-bold text-lg mb-4 text-primary-700 dark:text-primary-300">Recursos</h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline">
+                  Cómo Usar
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline">
+                  Preguntas Frecuentes
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline">
+                  Soporte
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline">
+                  Contacto
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="font-bold text-lg mb-4 text-primary-700 dark:text-primary-300">Legal</h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline">
+                  Términos de Uso
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline">
+                  Política de Privacidad
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline">
+                  Cookies
+                </a>
+              </li>
+              <li className="pt-2 text-gray-500 dark:text-gray-500 text-xs">
+                Desarrollado con Google Books API
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center text-sm text-gray-600 dark:text-gray-400">
-          <p className="flex items-center justify-center gap-1">
-            Made with <Heart size={16} className="text-red-500 fill-red-500" /> for book lovers
-          </p>
-          <p className="mt-2">© 2024 BiblioApp. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="border-t border-neutral-200 dark:border-neutral-700 mt-10 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
+              Hecho con <Heart size={16} className="text-red-500 fill-red-500 animate-pulse-slow" /> para los amantes de los libros
+            </p>
+            <p className="text-sm text-gray-500 dark:text-gray-500">
+              © {currentYear} BiblioApp. Todos los derechos reservados.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
