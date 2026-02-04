@@ -12,7 +12,7 @@ function App() {
   return (
     <ThemeProvider>
       <LibraryProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/biblioteca-test">
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
