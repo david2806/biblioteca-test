@@ -161,9 +161,9 @@ const Home = () => {
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="flex items-center gap-2 text-white">
                       <Star className="fill-secondary-400 text-secondary-400" size={20} />
-                      <span className="font-bold text-lg">{bookOfTheDay.volumeInfo?.averageRating?.toFixed(1)}</span>
+                      <span className="font-bold text-lg">{bookOfTheDay.volumeInfo?.averageRating?.toFixed(1) || 'N/A'}</span>
                       <span className="text-sm opacity-80">
-                        ({bookOfTheDay.volumeInfo?.ratingsCount?.toLocaleString()} reseñas)
+                        ({bookOfTheDay.volumeInfo?.ratingsCount?.toLocaleString() || '0'} reseñas)
                       </span>
                     </div>
                   </div>

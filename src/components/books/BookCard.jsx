@@ -24,6 +24,33 @@ const BookCard = ({ book, index = 0 }) => {
     }
   };
 
+  // Status badge configuration
+  const getStatusBadge = () => {
+    if (!currentList) return null;
+    
+    const statusConfig = {
+      read: { label: '✓ Leído', gradient: 'linear-gradient(135deg, #38a169 0%, #276749 100%)' },
+      reading: { label: '📖 Leyendo', gradient: 'linear-gradient(135deg, #3182ce 0%, #2c5282 100%)' },
+      wantToRead: { label: '💭 Por Leer', gradient: 'linear-gradient(135deg, #d69e2e 0%, #ecc94b 100%)' }
+    };
+    
+    const config = statusConfig[currentList];
+    if (!config) return null;
+    
+    return (
+      <div className="absolute top-4 right-4 z-20">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          className="px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg"
+          style={{ background: config.gradient }}
+        >
+          {config.label}
+        </motion.div>
+      </div>
+    );
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -34,24 +61,7 @@ const BookCard = ({ book, index = 0 }) => {
       onClick={() => navigate(`/libro/${book.id}`)}
     >
       {/* Status Badge */}
-      {currentList && (
-        <div className="absolute top-4 right-4 z-20">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            className="px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg"
-            style={{
-              background: currentList === 'read' 
-                ? 'linear-gradient(135deg, #38a169 0%, #276749 100%)'
-                : currentList === 'reading'
-                ? 'linear-gradient(135deg, #3182ce 0%, #2c5282 100%)'
-                : 'linear-gradient(135deg, #d69e2e 0%, #ecc94b 100%)'
-            }}
-          >
-            {currentList === 'read' ? '✓ Leído' : currentList === 'reading' ? '📖 Leyendo' : '💭 Por Leer'}
-          </motion.div>
-        </div>
-      )}
+      {getStatusBadge()}
       
       <div className="relative">
         <img
