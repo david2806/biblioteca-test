@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+body {
+  font-family: Inter, sans-serif;
+  background-color: white;
+  color: rgb(17, 24, 39);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: rgb(17, 24, 39);
+  color: rgb(243, 244, 246);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+.btn-primary {
+  background-color: rgb(45, 106, 79);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: rgb(37, 90, 66);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: rgb(139, 115, 85);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(110, 90, 67);
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+body.dark .card {
+  background-color: rgb(31, 41, 55);
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.5rem;
+  background-color: white;
+  color: rgb(17, 24, 39);
+  transition: all 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  ring: 2px solid rgb(45, 106, 79);
+  border-color: transparent;
+}
+
+body.dark .input {
+  border-color: rgb(75, 85, 99);
+  background-color: rgb(55, 65, 81);
+  color: rgb(243, 244, 246);
+}
