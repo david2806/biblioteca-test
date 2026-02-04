@@ -23,8 +23,8 @@ const Rating = ({ rating, onRate, readonly = false, size = 20 }) => {
             size={size}
             className={
               star <= rating 
-                ? 'fill-secondary-400 text-secondary-500 drop-shadow-sm' 
-                : 'text-neutral-300 dark:text-neutral-600'
+                ? 'fill-accent-gold text-accent-gold drop-shadow-sm' 
+                : 'text-primary-200'
             }
           />
         </motion.button>

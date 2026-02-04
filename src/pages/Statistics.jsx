@@ -14,29 +14,29 @@ const Statistics = () => {
       title: 'Books Read',
       value: stats.totalBooks,
       icon: BookOpen,
-      color: 'text-blue-500',
-      bgColor: 'bg-blue-100 dark:bg-blue-900/20',
+      color: 'text-primary-600',
+      bgColor: 'bg-primary-100',
     },
     {
       title: 'Currently Reading',
       value: reading.length,
       icon: TrendingUp,
-      color: 'text-green-500',
-      bgColor: 'bg-green-100 dark:bg-green-900/20',
+      color: 'text-primary-700',
+      bgColor: 'bg-primary-200',
     },
     {
       title: 'Want to Read',
       value: wantToRead.length,
       icon: Target,
-      color: 'text-purple-500',
-      bgColor: 'bg-purple-100 dark:bg-purple-900/20',
+      color: 'text-primary-500',
+      bgColor: 'bg-primary-50',
     },
     {
       title: 'Total Pages Read',
       value: stats.totalPages.toLocaleString(),
       icon: BookOpen,
-      color: 'text-orange-500',
-      bgColor: 'bg-orange-100 dark:bg-orange-900/20',
+      color: 'text-accent-gold',
+      bgColor: 'bg-warm-100',
     },
   ];
 
@@ -62,7 +62,7 @@ const Statistics = () => {
                 <Card>
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                      <p className="text-sm text-warm-700 mb-1">
                         {stat.title}
                       </p>
                       <p className="text-3xl font-bold">{stat.value}</p>
@@ -92,16 +92,16 @@ const Statistics = () => {
                       <div key={genre}>
                         <div className="flex justify-between mb-2">
                           <span className="font-medium">{genre}</span>
-                          <span className="text-gray-600 dark:text-gray-400">
+                          <span className="text-warm-700">
                             {count} books ({percentage.toFixed(0)}%)
                           </span>
                         </div>
-                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div className="w-full bg-warm-200 rounded-full h-2">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: `${percentage}%` }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="bg-accent-500 h-2 rounded-full"
+                            className="bg-primary-600 h-2 rounded-full"
                           />
                         </div>
                       </div>
@@ -115,16 +115,16 @@ const Statistics = () => {
         {/* Achievements */}
         <div>
           <div className="flex items-center gap-2 mb-6">
-            <Award className="text-accent-500" size={32} />
+            <Award className="text-accent-gold" size={32} />
             <h2 className="text-2xl font-serif font-bold">Achievements</h2>
           </div>
           
           {achievements.length === 0 ? (
             <Card className="text-center">
               <div className="py-8">
-                <Award className="mx-auto text-gray-400 mb-4" size={64} />
+                <Award className="mx-auto text-warm-400 mb-4" size={64} />
                 <h3 className="text-xl font-serif font-bold mb-2">No Achievements Yet</h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-warm-700">
                   Start reading books to unlock achievements!
                 </p>
               </div>
@@ -140,16 +140,16 @@ const Statistics = () => {
                 >
                   <Card className="text-center">
                     <div className="mb-4">
-                      <Award className="mx-auto text-yellow-500" size={48} />
+                      <Award className="mx-auto text-accent-gold" size={48} />
                     </div>
                     <h3 className="font-serif font-bold text-lg mb-2">
                       {achievement.name}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-warm-700">
                       {achievement.description}
                     </p>
                     {achievement.unlocked && (
-                      <div className="mt-4 inline-block px-3 py-1 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded-full text-sm font-medium">
+                      <div className="mt-4 inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">
                         Unlocked! 🎉
                       </div>
                     )}
@@ -165,24 +165,24 @@ const Statistics = () => {
           <h2 className="text-2xl font-serif font-bold mb-6">Reading Goal</h2>
           <Card>
             <div className="text-center py-8">
-              <Target className="mx-auto text-accent-500 mb-4" size={64} />
+              <Target className="mx-auto text-primary-600 mb-4" size={64} />
               <h3 className="text-xl font-bold mb-2">Annual Reading Goal</h3>
-              <p className="text-4xl font-bold text-accent-500 mb-2">
+              <p className="text-4xl font-bold text-primary-600 mb-2">
                 {stats.totalBooks} / 50
               </p>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-warm-700 mb-4">
                 {stats.totalBooks >= 50 
                   ? 'Congratulations! Goal achieved! 🎉'
                   : `${50 - stats.totalBooks} books to go!`
                 }
               </p>
               <div className="max-w-md mx-auto">
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
+                <div className="w-full bg-warm-200 rounded-full h-4">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${Math.min((stats.totalBooks / 50) * 100, 100)}%` }}
                     transition={{ duration: 1, delay: 0.3 }}
-                    className="bg-accent-500 h-4 rounded-full"
+                    className="bg-primary-600 h-4 rounded-full"
                   />
                 </div>
               </div>

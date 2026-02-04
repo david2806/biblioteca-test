@@ -15,7 +15,7 @@ const BookGrid = ({ books, loading = false }) => {
   if (!books || books.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-500 dark:text-gray-400 text-lg">No books found</p>
+        <p className="text-warm-600 text-lg">No books found</p>
       </div>
     );
   }

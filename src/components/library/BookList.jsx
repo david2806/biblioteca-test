@@ -18,7 +18,7 @@ const BookList = ({ books, listName }) => {
         <div className="max-w-md mx-auto">
           <div className="text-6xl mb-4">📚</div>
           <h3 className="text-xl font-serif font-bold mb-2">No books yet</h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-warm-700 mb-6">
             Start building your library by adding books from the explore page!
           </p>
           <button
@@ -69,7 +69,7 @@ const BookList = ({ books, listName }) => {
                 <h3 className="font-serif font-semibold text-lg mb-1 line-clamp-2">
                   {title}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-1">
+                <p className="text-sm text-warm-700 line-clamp-1">
                   {authors}
                 </p>
               </div>

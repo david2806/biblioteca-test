@@ -59,10 +59,10 @@ const BookCarousel = ({ books, title }) => {
             whileHover={{ scale: 1.1, x: -4 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-neutral-800 shadow-elegant hover:shadow-elegant-lg rounded-full p-3 -ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-elegant hover:shadow-elegant-lg rounded-full p-3 -ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             aria-label="Previous books"
           >
-            <ChevronLeft size={28} className="text-primary-600 dark:text-primary-400" />
+            <ChevronLeft size={28} className="text-primary-600" />
           </motion.button>
         )}
 
@@ -94,10 +94,10 @@ const BookCarousel = ({ books, title }) => {
             whileHover={{ scale: 1.1, x: 4 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-neutral-800 shadow-elegant hover:shadow-elegant-lg rounded-full p-3 -mr-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-elegant hover:shadow-elegant-lg rounded-full p-3 -mr-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             aria-label="Next books"
           >
-            <ChevronRight size={28} className="text-primary-600 dark:text-primary-400" />
+            <ChevronRight size={28} className="text-primary-600" />
           </motion.button>
         )}
       </div>
