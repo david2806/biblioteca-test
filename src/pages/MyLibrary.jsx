@@ -35,8 +35,8 @@ const MyLibrary = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
                   activeTab === tab.id
-                    ? 'bg-accent-500 text-white shadow-md'
-                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                    ? 'bg-primary-600 text-white shadow-md'
+                    : 'bg-white text-warm-800 hover:bg-warm-100'
                 }`}
               >
                 <Icon size={20} />
@@ -44,7 +44,7 @@ const MyLibrary = () => {
                 <span className={`px-2 py-0.5 rounded-full text-sm ${
                   activeTab === tab.id
                     ? 'bg-white/20'
-                    : 'bg-gray-200 dark:bg-gray-700'
+                    : 'bg-warm-200'
                 }`}>
                   {tab.books.length}
                 </span>

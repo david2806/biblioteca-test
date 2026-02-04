@@ -21,7 +21,7 @@ const SearchFilters = ({ filters, onChange }) => {
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+    <div className="bg-white rounded-xl shadow-md p-6">
       <h3 className="font-serif text-xl font-bold mb-4">Filters</h3>
       
       <div className="mb-6">
@@ -35,8 +35,8 @@ const SearchFilters = ({ filters, onChange }) => {
               onClick={() => onChange({ ...filters, category })}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 filters.category === category
-                  ? 'bg-accent-500 text-white'
-                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                  ? 'bg-primary-600 text-white'
+                  : 'bg-warm-100 text-warm-800 hover:bg-warm-200'
               }`}
             >
               {category}

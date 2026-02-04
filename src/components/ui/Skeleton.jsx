@@ -1,6 +1,6 @@
 const Skeleton = ({ className = '', width = 'w-full', height = 'h-4' }) => {
   return (
-    <div className={`${width} ${height} bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-200 dark:from-neutral-700 dark:via-neutral-600 dark:to-neutral-700 rounded-lg shimmer ${className}`}></div>
+    <div className={`${width} ${height} bg-gradient-to-r from-primary-100 via-primary-50 to-primary-100 rounded-lg shimmer ${className}`}></div>
   );
 };
 

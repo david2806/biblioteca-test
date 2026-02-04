@@ -53,13 +53,13 @@ const BookPage = () => {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-1/4 mb-8"></div>
+          <div className="h-8 bg-warm-200 rounded w-1/4 mb-8"></div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="h-96 bg-gray-200 dark:bg-gray-700 rounded"></div>
+            <div className="h-96 bg-warm-200 rounded"></div>
             <div className="md:col-span-2 space-y-4">
-              <div className="h-12 bg-gray-200 dark:bg-gray-700 rounded"></div>
-              <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
-              <div className="h-32 bg-gray-200 dark:bg-gray-700 rounded"></div>
+              <div className="h-12 bg-warm-200 rounded"></div>
+              <div className="h-6 bg-warm-200 rounded w-1/2"></div>
+              <div className="h-32 bg-warm-200 rounded"></div>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ const BookPage = () => {
       >
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-accent-500 mb-8"
+          className="flex items-center gap-2 text-warm-700 hover:text-primary-600 mb-8"
         >
           <ArrowLeft size={20} />
           Back
@@ -117,7 +117,7 @@ const BookPage = () => {
 
           <div className="md:col-span-2">
             <h1 className="text-4xl font-serif font-bold mb-2">{title}</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-xl text-warm-700 mb-4">
               by {authors}
             </p>
 
@@ -143,7 +143,7 @@ const BookPage = () => {
               {categories.map((category, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-accent-100 dark:bg-accent-900/20 text-accent-700 dark:text-accent-400 rounded-full text-sm"
+                  className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm"
                 >
                   {category}
                 </span>
@@ -151,15 +151,15 @@ const BookPage = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+              <div className="flex items-center gap-2 text-warm-700">
                 <BookOpen size={20} />
                 <span>{pageCount} pages</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+              <div className="flex items-center gap-2 text-warm-700">
                 <Building2 size={20} />
                 <span>{publisher}</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+              <div className="flex items-center gap-2 text-warm-700">
                 <Calendar size={20} />
                 <span>{publishedDate}</span>
               </div>
@@ -191,7 +191,7 @@ const BookPage = () => {
 
             <div>
               <h3 className="font-serif text-2xl font-bold mb-4">Description</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-warm-800 leading-relaxed">
                 {description}
               </p>
             </div>

@@ -116,7 +116,7 @@ const Explore = () => {
 
           <div className="lg:col-span-3">
             <div className="mb-4 flex justify-between items-center">
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-warm-700">
                 {loading ? 'Searching...' : `${books.length} books found`}
               </p>
             </div>

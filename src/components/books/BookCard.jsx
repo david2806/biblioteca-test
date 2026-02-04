@@ -29,9 +29,9 @@ const BookCard = ({ book, index = 0 }) => {
     if (!currentList) return null;
     
     const statusConfig = {
-      read: { label: '✓ Leído', gradient: 'linear-gradient(135deg, #38a169 0%, #276749 100%)' },
-      reading: { label: '📖 Leyendo', gradient: 'linear-gradient(135deg, #3182ce 0%, #2c5282 100%)' },
-      wantToRead: { label: '💭 Por Leer', gradient: 'linear-gradient(135deg, #d69e2e 0%, #ecc94b 100%)' }
+      read: { label: '✓ Leído', gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)' },
+      reading: { label: '📖 Leyendo', gradient: 'linear-gradient(135deg, #34d399 0%, #10b981 100%)' },
+      wantToRead: { label: '💭 Por Leer', gradient: 'linear-gradient(135deg, #6ee7b7 0%, #34d399 100%)' }
     };
     
     const config = statusConfig[currentList];
@@ -57,7 +57,7 @@ const BookCard = ({ book, index = 0 }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05 }}
       whileHover={{ y: -8, scale: 1.02 }}
-      className="card overflow-hidden cursor-pointer group relative shadow-elegant hover:shadow-elegant-lg dark:shadow-elegant-dark dark:hover:shadow-elegant-dark-lg"
+      className="card overflow-hidden cursor-pointer group relative shadow-elegant hover:shadow-elegant-lg"
       onClick={() => navigate(`/libro/${book.id}`)}
     >
       {/* Status Badge */}
@@ -116,17 +116,17 @@ const BookCard = ({ book, index = 0 }) => {
         </div>
       </div>
       
-      <div className="p-5 bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900">
-        <h3 className="font-serif font-bold text-xl mb-2 line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+      <div className="p-5 bg-gradient-to-b from-white to-warm-50">
+        <h3 className="font-serif font-bold text-xl mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors text-primary-800">
           {title}
         </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-1 font-medium">
+        <p className="text-sm text-warm-700 mb-3 line-clamp-1 font-medium">
           {authors}
         </p>
         {rating > 0 && (
           <div className="flex items-center gap-2">
             <Rating rating={Math.round(rating)} readonly size={18} />
-            <span className="text-sm font-semibold text-secondary-600 dark:text-secondary-400">
+            <span className="text-sm font-semibold text-accent-gold">
               {rating.toFixed(1)}
             </span>
           </div>

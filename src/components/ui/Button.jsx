@@ -13,10 +13,10 @@ const Button = ({
   
   const variants = {
     primary: 'bg-gradient-primary text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
-    secondary: 'bg-gradient-secondary text-neutral-800 dark:text-neutral-900 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
+    secondary: 'bg-gradient-secondary text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
     accent: 'bg-gradient-accent text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
-    outline: 'border-2 border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-500 hover:text-white dark:hover:text-white',
-    ghost: 'text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20',
+    outline: 'border-2 border-primary-500 text-primary-600 hover:bg-primary-500 hover:text-white',
+    ghost: 'text-primary-600 hover:bg-primary-50',
   };
 
   return (

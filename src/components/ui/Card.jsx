@@ -4,7 +4,7 @@ const Card = ({ children, className = '', hover = true, onClick, variant = 'defa
   const variants = {
     default: 'card p-6',
     glass: 'card-glass p-6',
-    gradient: 'bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 rounded-2xl shadow-elegant p-6',
+    gradient: 'bg-gradient-to-br from-white to-warm-50 rounded-2xl shadow-elegant p-6',
   };
 
   return (
@@ -13,7 +13,7 @@ const Card = ({ children, className = '', hover = true, onClick, variant = 'defa
       animate={{ opacity: 1, y: 0 }}
       whileHover={hover ? { 
         y: -6, 
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
+        boxShadow: '0 25px 50px -12px rgba(16, 185, 129, 0.2)',
         transition: { duration: 0.2 }
       } : {}}
       className={`${variants[variant]} ${onClick ? 'cursor-pointer' : ''} ${className}`}

@@ -31,7 +31,7 @@ const SearchBar = ({ onSearch, placeholder = "Buscar por título, autor o ISBN..
         />
         <SearchIcon 
           className={`absolute left-5 top-1/2 -translate-y-1/2 transition-colors duration-300 ${
-            isFocused ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400'
+            isFocused ? 'text-primary-600' : 'text-warm-400'
           }`}
           size={24} 
         />
