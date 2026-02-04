@@ -1,16 +1,22 @@
 const Skeleton = ({ className = '', width = 'w-full', height = 'h-4' }) => {
   return (
-    <div className={`${width} ${height} bg-gray-200 dark:bg-gray-700 rounded animate-pulse ${className}`}></div>
+    <div className={`${width} ${height} bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-200 dark:from-neutral-700 dark:via-neutral-600 dark:to-neutral-700 rounded-lg shimmer ${className}`}></div>
   );
 };
 
 export const BookCardSkeleton = () => {
   return (
-    <div className="card p-4">
-      <Skeleton width="w-full" height="h-64" className="mb-4" />
-      <Skeleton width="w-3/4" height="h-6" className="mb-2" />
-      <Skeleton width="w-1/2" height="h-4" className="mb-4" />
-      <Skeleton width="w-full" height="h-4" />
+    <div className="card p-5 shadow-elegant">
+      <Skeleton width="w-full" height="h-80" className="mb-5 rounded-xl" />
+      <Skeleton width="w-3/4" height="h-6" className="mb-3 rounded-lg" />
+      <Skeleton width="w-1/2" height="h-4" className="mb-4 rounded-lg" />
+      <div className="flex gap-1">
+        <Skeleton width="w-5" height="h-5" className="rounded-full" />
+        <Skeleton width="w-5" height="h-5" className="rounded-full" />
+        <Skeleton width="w-5" height="h-5" className="rounded-full" />
+        <Skeleton width="w-5" height="h-5" className="rounded-full" />
+        <Skeleton width="w-5" height="h-5" className="rounded-full" />
+      </div>
     </div>
   );
 };

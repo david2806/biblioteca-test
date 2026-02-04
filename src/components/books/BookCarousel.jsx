@@ -41,18 +41,28 @@ const BookCarousel = ({ books, title }) => {
   return (
     <div className="mb-12">
       {title && (
-        <h2 className="text-3xl font-serif font-bold mb-6">{title}</h2>
+        <motion.h2 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-serif font-bold mb-8 bg-gradient-primary bg-clip-text text-transparent"
+        >
+          {title}
+        </motion.h2>
       )}
       
-      <div className="relative">
+      <div className="relative group">
         {canScrollLeft && (
           <motion.button
-            whileHover={{ scale: 1.1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            whileHover={{ scale: 1.1, x: -4 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg rounded-full p-2 -ml-4"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-neutral-800 shadow-elegant hover:shadow-elegant-lg rounded-full p-3 -ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            aria-label="Previous books"
           >
-            <ChevronLeft size={24} className="text-accent-500" />
+            <ChevronLeft size={28} className="text-primary-600 dark:text-primary-400" />
           </motion.button>
         )}
 
@@ -63,25 +73,31 @@ const BookCarousel = ({ books, title }) => {
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           >
             {books.map((book, index) => (
-              <div
+              <motion.div
                 key={book.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05 }}
                 style={{ minWidth: `${100 / visibleBooks}%` }}
                 className="px-2"
               >
                 <BookCard book={book} index={0} />
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
 
         {canScrollRight && (
           <motion.button
-            whileHover={{ scale: 1.1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            whileHover={{ scale: 1.1, x: 4 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg rounded-full p-2 -mr-4"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-neutral-800 shadow-elegant hover:shadow-elegant-lg rounded-full p-3 -mr-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            aria-label="Next books"
           >
-            <ChevronRight size={24} className="text-accent-500" />
+            <ChevronRight size={28} className="text-primary-600 dark:text-primary-400" />
           </motion.button>
         )}
       </div>

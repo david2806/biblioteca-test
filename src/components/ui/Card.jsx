@@ -1,12 +1,22 @@
 import { motion } from 'framer-motion';
 
-const Card = ({ children, className = '', hover = true, onClick }) => {
+const Card = ({ children, className = '', hover = true, onClick, variant = 'default' }) => {
+  const variants = {
+    default: 'card p-6',
+    glass: 'card-glass p-6',
+    gradient: 'bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 rounded-2xl shadow-elegant p-6',
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={hover ? { y: -5, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)' } : {}}
-      className={`card p-6 ${onClick ? 'cursor-pointer' : ''} ${className}`}
+      whileHover={hover ? { 
+        y: -6, 
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
+        transition: { duration: 0.2 }
+      } : {}}
+      className={`${variants[variant]} ${onClick ? 'cursor-pointer' : ''} ${className}`}
       onClick={onClick}
     >
       {children}
