@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { BookOpen, Search, Library, BarChart3 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import ThemeToggle from '../ui/ThemeToggle';
 import { useLibrary } from '../../hooks/useLibrary';
 
 const Header = () => {
@@ -17,7 +16,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-lg border-b border-neutral-200 dark:border-neutral-800 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b-2 border-primary-100 shadow-sm">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
@@ -25,13 +24,13 @@ const Header = () => {
               whileHover={{ rotate: [0, -10, 10, -10, 0] }}
               transition={{ duration: 0.5 }}
             >
-              <BookOpen className="text-primary-500 dark:text-primary-400 transition-transform" size={36} />
+              <BookOpen className="text-primary-500 transition-transform" size={36} />
             </motion.div>
             <div>
-              <span className="text-2xl md:text-3xl font-serif font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <span className="text-2xl md:text-3xl font-serif font-bold text-primary-600">
                 BiblioApp
               </span>
-              <p className="text-xs text-gray-500 dark:text-gray-400 hidden md:block">Tu biblioteca personal</p>
+              <p className="text-xs text-primary-700 hidden md:block">Tu biblioteca personal</p>
             </div>
           </Link>
 
@@ -48,16 +47,16 @@ const Header = () => {
                   <div className="flex items-center gap-2">
                     <Icon 
                       size={22} 
-                      className={`${isActive ? 'text-primary-600 dark:text-primary-400' : 'text-gray-600 dark:text-gray-400'} group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors`}
+                      className={`${isActive ? 'text-primary-600' : 'text-primary-800'} group-hover:text-primary-500 transition-colors`}
                     />
-                    <span className={`${isActive ? 'text-primary-600 dark:text-primary-400 font-bold' : 'text-gray-700 dark:text-gray-300 font-medium'} group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors`}>
+                    <span className={`${isActive ? 'text-primary-600 font-bold' : 'text-warm-800 font-medium'} group-hover:text-primary-500 transition-colors`}>
                       {item.label}
                     </span>
                     {item.badge > 0 && (
                       <motion.span 
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="bg-gradient-accent text-white text-xs font-bold rounded-full min-w-[24px] h-6 flex items-center justify-center px-2 shadow-md"
+                        className="bg-gradient-primary text-white text-xs font-bold rounded-full min-w-[24px] h-6 flex items-center justify-center px-2 shadow-md"
                       >
                         {item.badge}
                       </motion.span>
@@ -74,12 +73,10 @@ const Header = () => {
               );
             })}
           </div>
-
-          <ThemeToggle />
         </div>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden flex justify-around mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-800">
+        <div className="md:hidden flex justify-around mt-4 pt-4 border-t border-primary-100">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.path;
@@ -92,19 +89,19 @@ const Header = () => {
                 <div className="relative">
                   <Icon 
                     size={26} 
-                    className={isActive ? 'text-primary-600 dark:text-primary-400' : 'text-gray-600 dark:text-gray-400'}
+                    className={isActive ? 'text-primary-600' : 'text-warm-600'}
                   />
                   {item.badge > 0 && (
                     <motion.span 
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      className="absolute -top-2 -right-2 bg-gradient-accent text-white text-xs font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center px-1"
+                      className="absolute -top-2 -right-2 bg-gradient-primary text-white text-xs font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center px-1"
                     >
                       {item.badge}
                     </motion.span>
                   )}
                 </div>
-                <span className={`text-xs ${isActive ? 'text-primary-600 dark:text-primary-400 font-bold' : 'text-gray-600 dark:text-gray-400 font-medium'}`}>
+                <span className={`text-xs ${isActive ? 'text-primary-600 font-bold' : 'text-warm-600 font-medium'}`}>
                   {item.label}
                 </span>
               </Link>
